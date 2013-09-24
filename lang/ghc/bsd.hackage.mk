@@ -332,6 +332,7 @@ polyparse_port=			textproc/hs-polyparse
 pool-conduit_port=		devel/hs-pool-conduit
 porte_port=			ports-mgmt/hs-porte	# executable
 postgresql-libpq_port=      databases/hs-postgresql-libpq
+postgresql-simple_port=     databases/hs-postgresql-simple
 pretty_port=      textproc/hs-pretty
 pretty-show_port=		devel/hs-pretty-show	# executable
 primitive_port=			devel/hs-primitive
