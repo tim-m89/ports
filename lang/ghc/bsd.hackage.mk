@@ -319,6 +319,7 @@ pem_port=			security/hs-pem
 persistent_port=		databases/hs-persistent
 persistent-sqlite_port=		databases/hs-persistent-sqlite
 persistent-template_port=	databases/hs-persistent-template
+pipes_port=       devel/hs-pipes
 plugins_port=			devel/hs-plugins
 pointed_port=			math/hs-pointed
 pointedlist_port=		devel/hs-pointedlist

@@ -1,0 +1,12 @@
+`pipes` is a clean and powerful stream processing library that lets you
+build and connect reusable streaming components Advantages over traditional
+streaming libraries: * /Concise API/: Use simple commands like 'for',
+('>->'), 'await', and 'yield' * /Blazing fast/: Implementation tuned for
+speed * /Lightweight Dependency/: @pipes@ is small and compiles very
+rapidly, including dependencies * /Elegant semantics/: Use practical
+category theory * /ListT/: Correct implementation of 'ListT' that
+interconverts with pipes * /Bidirectionality/: Implement duplex channels
+* /Extensive Documentation/: Second to none! Import "Pipes" to use the
+library. Read "Pipes.Tutorial" for an extensive tutorial.
+
+WWW:	http://hackage.haskell.org/package/pipes
