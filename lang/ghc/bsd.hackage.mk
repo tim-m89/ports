@@ -424,6 +424,7 @@ testpack_port=			devel/hs-testpack
 texmath_port=			textproc/hs-texmath	# executable
 text_port=			devel/hs-text
 th-lift_port=     devel/hs-th-lift
+th-orphans_port=     devel/hs-th-orphans
 threads_port=			devel/hs-threads
 threadscope_port=		devel/hs-threadscope	# executable
 time-compat_port=		devel/hs-time-compat
