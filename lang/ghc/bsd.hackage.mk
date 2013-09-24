@@ -296,6 +296,7 @@ mysql_port=			databases/hs-mysql
 mysql-simple_port=		databases/hs-mysql-simple
 nats_port=			math/hs-nats
 network_port=			net/hs-network
+network-simple_port=      net/hs-network-simple
 network-conduit_port=		net/hs-network-conduit
 network-fancy_port=		net/hs-network-fancy
 network-info_port=		net/hs-network-info
