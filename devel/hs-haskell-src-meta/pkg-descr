@@ -1,0 +1,4 @@
+The translation from haskell-src-exts abstract syntax to template-haskell
+abstract syntax isn't 100% complete yet.
+
+WWW: http://hackage.haskell.org/package/haskell-src-meta
