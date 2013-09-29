@@ -10,7 +10,7 @@
 #
 
 .if !defined(METAPORT)
-MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
 .else
 MASTER_SITES=	# empty
 DISTFILES=	# empty
