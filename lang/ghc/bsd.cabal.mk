@@ -1,5 +1,5 @@
 #
-# $FreeBSD$
+# $FreeBSD: head/lang/ghc/bsd.cabal.mk 327461 2013-09-17 09:28:01Z bapt $
 #
 # bsd.cabal.mk -- Support for ports based on Haskell Cabal.
 #
@@ -137,7 +137,8 @@ RUN_DEPENDS+=	${dependencies}
 .endif
 
 .if defined(USE_GHC_NATIVE)
-USE_PERL5_BUILD=	5.8+
+USES+=		perl5
+USE_PERL5=	build
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -300,12 +301,12 @@ add-plist-cabal:
 .if !defined(METAPORT)
 	@if [ -f ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh ]; then \
 		(${ECHO_CMD} '@exec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh'; \
-		 ${ECHO_CMD} '@unexec ${LOCALBASE}/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}') >> ${TMPPLIST}; fi
+		 ${ECHO_CMD} '@unexec %D/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}') >> ${TMPPLIST}; fi
 .if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@(${ECHO_CMD} '@exec if [ -f ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
-		cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi' ; \
-	  ${ECHO_CMD} '@unexec ${RM} -f ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
-	  ${ECHO_CMD} '@unexec if [ -f ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi') >>${TMPPLIST};
+	@(${ECHO_CMD} '@exec if [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then ${LN} -s ${DOCSDIR}/html %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+		cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi' ; \
+	  ${ECHO_CMD} '@unexec ${RM} -f %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
+	  ${ECHO_CMD} '@unexec if [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi') >>${TMPPLIST};
 .endif
 .else
 	${DO_NADA}
@@ -314,9 +315,9 @@ add-plist-cabal:
 post-install::
 .if !defined(METAPORT)
 .if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@if [ -f ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then \
-		${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
-		cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
+	@if [ -f ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then \
+		${LN} -s ${DOCSDIR}/html ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+		cd ${PREFIX}/${GHC_LIB_DOCSDIR_REL} && \
 		${RM} -f doc-index*.html && ./gen_contents_index; \
 	fi
 .endif
@@ -338,19 +339,3 @@ post-install::
 .else
 	${DO_NADA}
 .endif # !METAPORT
-
-.if defined(USE_CABAL)
-.for cabal_package in ${USE_CABAL}
-__u_h_r_package=	${cabal_package:C/[<=>].*$//g}
-__u_h_r_port=		${${__u_h_r_package}_port}
-__u_h_r_name=		${__u_h_r_port:C/.*\///g}
-
-ports:=	${ports} ${__u_h_r_package}:../../${__u_h_r_port}
-.endfor
-
-show-deppkgvers:
-	@for p in ${ports}; do \
-	    echo -n "$${p%%:*}=="; \
-	    ${MAKE} -C $${p##*:} -V PKGVERSION; \
-	done
-.endif

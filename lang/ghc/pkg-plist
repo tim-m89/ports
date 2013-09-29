@@ -1,4 +1,4 @@
-@comment $FreeBSD$
+@comment $FreeBSD: head/lang/ghc/pkg-plist 319894 2013-06-04 18:53:40Z pgj $
 bin/ghc
 bin/ghci
 bin/ghc-pkg
