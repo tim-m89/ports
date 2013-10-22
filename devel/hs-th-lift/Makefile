@@ -11,5 +11,6 @@ COMMENT=	Derive Template Haskell's Lift class for datatypes
 CABAL_SETUP=	Setup.hs
 
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

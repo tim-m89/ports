@@ -11,5 +11,6 @@ LICENSE=	BSD
 
 USE_CABAL=	attoparsec>=0.10.4.0 http-types>=0.8.0
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

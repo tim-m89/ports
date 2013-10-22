@@ -19,5 +19,6 @@ CGI_FLAG_ENABLE=	cgi
 CGI_FLAG_CABAL=		cgi json utf8-string
 CGI_FLAG_EXECUTABLE=	texmath-cgi
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

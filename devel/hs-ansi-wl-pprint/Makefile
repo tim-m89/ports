@@ -14,5 +14,6 @@ USE_CABAL=	ansi-terminal>=0.4.0
 
 FLAGS_DISABLE=	Example
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

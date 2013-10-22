@@ -22,5 +22,6 @@ post-install::
 	@${MV} ${PREFIX}/bin/cabal ${PREFIX}/bin/cabal-install
 	${INSTALL_SCRIPT} ${WRKDIR}/cabal ${PREFIX}/bin
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

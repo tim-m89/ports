@@ -16,5 +16,6 @@ USE_CABAL=	attoparsec>=0.10.0.3 attoparsec-enumerator>=0.3 \
 
 EXECUTABLE=	leksah-server leksahecho
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

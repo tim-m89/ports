@@ -9,5 +9,6 @@ COMMENT=	Character properties and classes for XML and Unicode
 
 LICENSE=	MIT
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

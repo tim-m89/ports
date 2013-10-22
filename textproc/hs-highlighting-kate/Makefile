@@ -17,5 +17,6 @@ EXECUTABLE_DESC=		Build the Highlight executable
 EXECUTABLE_FLAG_ENABLE=		executable
 EXECUTABLE_FLAG_EXECUTABLE=	Highlight
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

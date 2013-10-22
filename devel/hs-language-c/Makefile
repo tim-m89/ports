@@ -13,5 +13,6 @@ USE_ALEX=	yes
 USE_HAPPY=	yes
 USE_CABAL=	syb
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -26,5 +26,6 @@ SUB_FILES=	pkg-message
 SHOW_PKGMSG=	yes
 .endif
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

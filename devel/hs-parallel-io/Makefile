@@ -11,5 +11,6 @@ LICENSE=	BSD
 
 USE_CABAL=	extensible-exceptions>0.1.0.1 random>=1.0
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

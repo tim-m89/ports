@@ -34,5 +34,6 @@ DYRE_FLAG_CABAL=	dyre>=0.8.3
 THREADED_DESC=		Multithreaded execution
 THREADED_FLAG_ENABLE=	threaded
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

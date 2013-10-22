@@ -13,5 +13,6 @@ USE_CABAL=	async>=2.0 basic-prelude>=0.3.4 hashable lifted-base>=0.2 \
 		monad-control system-filepath>=0.4 text transformers \
 		unordered-containers vector
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

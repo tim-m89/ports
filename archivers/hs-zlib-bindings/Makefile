@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	zlib>=0.5.2.0
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

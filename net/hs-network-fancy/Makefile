@@ -9,5 +9,6 @@ COMMENT=	Networking support with a cleaner API
 
 LICENSE=	BSD
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

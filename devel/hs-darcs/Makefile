@@ -52,5 +52,6 @@ MMAP_FLAG_ENABLE=	mmap
 MMAP_FLAG_CABAL=	mmap>=0.5
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

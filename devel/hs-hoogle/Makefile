@@ -18,5 +18,6 @@ USE_CABAL=	aeson>=0.6.1 blaze-builder>=0.2 case-insensitive>=0.2 \
 
 EXECUTABLE=	hoogle
 
+NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
