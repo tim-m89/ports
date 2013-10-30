@@ -236,6 +236,7 @@ http-server_port=		www/hs-http-server
 http-types_port=		www/hs-http-types
 HUnit_port=			devel/hs-HUnit
 hxt_port=			textproc/hs-hxt
+hxt-http_port=                   net/hs-hxt-http
 hxt-charproperties_port=	textproc/hs-hxt-charproperties
 hxt-regex-xmlschema_port=	textproc/hs-hxt-regex-xmlschema
 hxt-unicode_port=		textproc/hs-hxt-unicode
