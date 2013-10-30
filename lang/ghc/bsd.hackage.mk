@@ -191,6 +191,7 @@ gtkglext_port=			x11-toolkits/hs-gtkglext
 gtksourceview2_port=		x11-toolkits/hs-gtksourceview2
 haddock_port=			devel/hs-haddock	# executable
 hamlet_port=			www/hs-hamlet
+HandsomeSoup_port=               net/hs-HandsomeSoup
 happstack_port=			www/hs-happstack	# executable
 happstack-server_port=		www/hs-happstack-server
 happy_port=			devel/hs-happy		# executable
