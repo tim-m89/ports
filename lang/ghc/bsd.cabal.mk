@@ -9,6 +9,8 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
+NO_STAGE=	yes
+
 .if !defined(METAPORT)
 MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
 .else
