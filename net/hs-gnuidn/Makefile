@@ -15,6 +15,5 @@ USE_C2HS=	yes
 USES=		pkgconfig
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

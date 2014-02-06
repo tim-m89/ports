@@ -12,6 +12,5 @@ LICENSE=	BSD
 USE_CABAL=	attoparsec>=0.8.5.3 base16-bytestring blaze-builder \
 		blaze-textual mysql>=0.1.1.1 pcre-light text>=0.11.0.2
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

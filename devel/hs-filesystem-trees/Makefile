@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	cond>=0.3 data-lens>=2.0.1 dlist>=0.2 mtl>=1.0
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

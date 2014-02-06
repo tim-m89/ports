@@ -12,6 +12,5 @@ LICENSE=	BSD
 USE_CABAL=	haskell-src-exts language-haskell-extract>=0.2 regex-posix \
 		test-framework
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

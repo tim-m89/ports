@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	attoparsec>=0.8 iteratee>=0.7 transformers
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

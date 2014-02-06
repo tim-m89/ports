@@ -16,6 +16,5 @@ USE_CABAL=	aeson>=0.4 attoparsec base64-bytestring>=1.0 cond>=0.3 \
 		transformers-base>=0.1 unordered-containers>=0.1.3 \
 		vector>=0.3 zip-archive>=0.1.1.8
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -13,6 +13,5 @@ USE_CABAL=	hashable>=1.1.2.3 random transformers>=0.2 unordered-containers
 
 EXECUTABLE=	shake
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

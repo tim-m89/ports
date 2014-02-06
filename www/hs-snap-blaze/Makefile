@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	blaze-html>=0.5 snap-core>=0.6
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

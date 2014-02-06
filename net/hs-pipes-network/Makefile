@@ -13,6 +13,5 @@ CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	network network-simple pipes pipes-safe transformers
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

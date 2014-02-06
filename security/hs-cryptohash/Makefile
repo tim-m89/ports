@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	byteable cereal>=0.2 crypto-api>=0.5 tagged>=0.1
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

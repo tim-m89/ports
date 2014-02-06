@@ -15,6 +15,5 @@ USE_CABAL=	aeson>=0.4 attoparsec cmdargs cpphs ghc-paths \
 
 EXECUTABLE=	buildwrapper
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

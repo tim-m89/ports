@@ -86,6 +86,5 @@ FEED_DESC=		Podcast feed support
 FEED_FLAG_ENABLE=	Feed
 FEED_FLAG_CABAL=	feed
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

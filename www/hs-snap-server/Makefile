@@ -22,6 +22,5 @@ OPENSSL_DESC=		Enable HTTPS support using the HsOpenSSL library
 OPENSSL_FLAG_ENABLE=	openssl
 OPENSSL_FLAG_CABAL=	HsOpenSSL>=0.10
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

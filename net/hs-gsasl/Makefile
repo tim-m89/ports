@@ -14,6 +14,5 @@ USE_CABAL=	transformers>=0.2
 USES=		pkgconfig
 LIB_DEPENDS=	gsasl.16:${PORTSDIR}/security/gsasl
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

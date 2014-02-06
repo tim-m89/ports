@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	appar byteorder network
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -16,6 +16,5 @@ USE_CABAL=	mtl syb>=0.3.3 text
 FLAGS_ENABLE=	split-base generic
 FLAGS_DISABLE=	parse pretty mapdict
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

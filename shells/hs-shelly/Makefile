@@ -12,6 +12,5 @@ LICENSE=	BSD
 USE_CABAL=	mtl>=2 system-fileio system-filepath>=0.4.7 text \
 		unix-compat
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

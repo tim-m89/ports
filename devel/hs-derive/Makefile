@@ -13,6 +13,5 @@ USE_CABAL=	haskell-src-exts>=1.9 syb transformers>=0.2 uniplate>=1.5
 
 EXECUTABLE=	derive
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

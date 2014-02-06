@@ -9,6 +9,5 @@ COMMENT=	Basic conditional and boolean operators with monadic variants
 
 LICENSE=	BSD
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

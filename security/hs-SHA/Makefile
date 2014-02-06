@@ -16,6 +16,5 @@ EXE_DESC=		Build a SHA2-384 executable similar to 'md5sum'
 EXE_FLAG_ENABLE=	Test
 EXE_FLAG_EXECUTABLE=	sha1 sha384
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

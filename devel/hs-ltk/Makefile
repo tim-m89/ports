@@ -12,6 +12,5 @@ LICENSE=	GPLv2
 USE_CABAL=	glib>=0.10.0 gtk>=0.10.0 mtl>=1.1.0.2 parsec>=2.1.0.1 \
 		transformers>=0.2.2.0
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

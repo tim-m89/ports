@@ -13,6 +13,5 @@ USE_CABAL=	fay-base>=0.17 fay-text>=0.1
 
 IGNORE_DYNAMIC=	yes
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

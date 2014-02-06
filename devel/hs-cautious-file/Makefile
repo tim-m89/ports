@@ -15,6 +15,5 @@ FLAGS_DEFAULT=		POSIX
 POSIX_DESC=		Use POSIX-specific features
 POSIX_FLAG_ENABLE=	posix
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

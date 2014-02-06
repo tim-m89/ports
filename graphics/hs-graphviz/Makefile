@@ -12,6 +12,5 @@ LICENSE=	BSD
 USE_CABAL=	colour dlist fgl polyparse>=1.7 temporary>=1.1 text \
 		transformers>=0.2 wl-pprint-text>=1.0.0.0
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

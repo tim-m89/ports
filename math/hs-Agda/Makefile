@@ -27,6 +27,5 @@ EPIC_DESC=		Install the Epic compiler
 EPIC_FLAG_ENABLE=	epic
 EPIC_FLAG_CABAL=	epic>=0.1.13
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

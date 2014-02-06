@@ -33,6 +33,5 @@ VTE_FLAG_ENABLE=	vte
 VTY_DESC=		Build with Vty frontend
 VTY_FLAG_ENABLE=	vty
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

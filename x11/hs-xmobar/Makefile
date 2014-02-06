@@ -55,6 +55,5 @@ THREADED_FLAG_ENABLE=	with_threaded
 # Disable Linux-only options
 FLAGS_DISABLE=		with_iwlib
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

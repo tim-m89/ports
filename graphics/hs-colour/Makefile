@@ -9,6 +9,5 @@ COMMENT=	A model for human colour/color perception
 
 LICENSE=	MIT
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

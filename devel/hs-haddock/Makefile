@@ -25,6 +25,5 @@ CONFIGURE_ARGS+=	--program-suffix=-${PORTVERSION}
 post-install::
 	@${LN} -sf ${PREFIX}/bin/${EXECUTABLE} ${PREFIX}/bin/haddock
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

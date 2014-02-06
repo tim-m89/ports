@@ -18,6 +18,5 @@ USE_CABAL=	aeson attoparsec data-default ghc-paths haskeline \
 EXECUTABLE=	fay fay-tests
 IGNORE_DYNAMIC=	yes
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

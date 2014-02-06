@@ -14,6 +14,5 @@ USE_CABAL=	aeson>=0.6 configurator>=0.2 data-default>=0.5 fay>=0.14.2.0 \
 
 IGNORE_DYNAMIC=	yes
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -21,6 +21,5 @@ post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-2.9-config"| ; \
 	    s|/sbin/ldconfig -n|/sbin/ldconfig -m| ' ${WRKSRC}/Setup.hs
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

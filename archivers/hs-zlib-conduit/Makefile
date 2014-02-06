@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	conduit>=1.0 transformers>=0.2.2 void zlib-bindings>=0.1
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -14,6 +14,5 @@ USE_CABAL=	monads-tf>=0.1 transformers>=0.2
 USES=		pkgconfig
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

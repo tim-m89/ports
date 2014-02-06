@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	xosd:${PORTSDIR}/misc/xosd
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	haskell-src-exts syb>=0.1 th-orphans>=0.5
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

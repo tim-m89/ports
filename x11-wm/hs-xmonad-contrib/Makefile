@@ -22,6 +22,5 @@ XFT_DESC=		Use Xft to render text
 XFT_FLAG_ENABLE=	use_xft
 XFT_FLAG_CABAL=		X11-xft>=0.2
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

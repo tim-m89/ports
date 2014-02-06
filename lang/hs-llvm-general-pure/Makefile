@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	mtl>=2.0.1.0 parsec>=3.1.3 setenv>=0.1.0 transformers>=0.3.0.0
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

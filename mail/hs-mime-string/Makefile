@@ -9,6 +9,5 @@ COMMENT=	MIME implementation for String's
 
 USE_CABAL=	base64-string iconv mtl network
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

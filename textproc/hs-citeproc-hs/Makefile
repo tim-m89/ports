@@ -27,6 +27,5 @@ NETWORK_DESC=		Use network and HTTP to retrieve CSL file
 NETWORK_FLAG_ENABLE=	network
 NETWORK_FLAG_CABAL=	HTTP>=4000.0.9 network>=2
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

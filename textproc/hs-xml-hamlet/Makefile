@@ -11,6 +11,5 @@ LICENSE=	BSD
 
 USE_CABAL=	parsec>=2.0 shakespeare>=1.0 text>=0.10 xml-conduit>=1.0
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

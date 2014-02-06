@@ -22,6 +22,5 @@ MD5_FLAG_CABAL=		pureMD5
 BINARY_DESC=		Use the binary package for serialization
 BINARY_FLAG_ENABLE=	UseBinary
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

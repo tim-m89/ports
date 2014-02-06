@@ -32,6 +32,5 @@ FLAGS_DEFINE=			EMBED_DATA_FILES
 EMBED_DATA_FILES_DESC=		Embed data files in binary for relocatable executable
 EMBED_DATA_FILES_FLAG_ENABLE=	embed_data_files
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

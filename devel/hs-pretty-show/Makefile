@@ -13,6 +13,5 @@ USE_CABAL=	haskell-lexer>=1
 
 EXECUTABLE=	ppsh
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -19,6 +19,5 @@ EXECUTABLE_FLAG_ENABLE=		executable
 EXECUTABLE_FLAG_CABAL=		cmdargs text>=0.11 cryptohash crypto-pubkey
 EXECUTABLE_FLAG_EXECUTABLE=	certificate
 
-NO_STAGE=     yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
