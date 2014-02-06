@@ -3,7 +3,7 @@
 
 PORTNAME=	OpenGL
 PORTVERSION=	2.8.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
@@ -12,7 +12,7 @@ COMMENT=	Binding for the OpenGL graphics system
 
 LICENSE=	BSD
 
-USE_CABAL=	GLURaw>=1.1.0.0 OpenGLRaw>=1.3.0.0
+USE_CABAL=	GLURaw>=1.1.0.0 OpenGLRaw>=1.3.0.0 text
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

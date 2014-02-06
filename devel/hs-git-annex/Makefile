@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-annex
-PORTVERSION=	4.20130827
+PORTVERSION=	5.20140116
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,9 +16,10 @@ USE_CABAL=	MissingH hslogger utf8-string network>=2.0 mtl>=2 HTTP \
 		bloomfilter edit-distance SafeSemaphore uuid random \
 		dlist unix-compat aeson
 
-USE_GMAKE=		yes
-USES=		perl5
+USES=		gmake perl5
 USE_PERL5=	build
+
+MAN1=		git-annex.1 git-annex-shell.1
 
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
 		git:${PORTSDIR}/devel/git \
@@ -32,7 +33,7 @@ EXECUTABLE=	git-annex git-annex-shell
 STANDALONE=	yes
 
 FLAGS_DEFINE=	S3 ASSISTANT INOTIFY WEBDAV WEBAPP PAIRING XMPP DNS PRODUCTION \
-		TDFA FEED
+		TDFA FEED QUVI CRYPTOHASH EKG TAHOE
 FLAGS_DEFAULT=	S3 ASSISTANT
 
 S3_DESC=		S3 support
@@ -85,6 +86,22 @@ WEBDAV_FLAG_CABAL=	DAV>=0.3 http-conduit xml-conduit http-types
 FEED_DESC=		Podcast feed support
 FEED_FLAG_ENABLE=	Feed
 FEED_FLAG_CABAL=	feed
+
+QUVI_DESC=		quvi to download videos
+QUVI_FLAG_ENABLE=	Quvi
+QUVI_FLAG_CABAL=	aeson
+
+CRYPTOHASH_DESC=	cryptohash for checksumming
+CRYPTOHASH_FLAG_ENABLE=	CryptoHash
+CRYPTOHASH_FLAG_CABAL=	cryptohash>=0.10.0
+
+EKG_DESC=		EKG for run-time monitoring
+EKG_FLAG_ENABLE=	EKG
+EKG_FLAG_CABAL=		ekg
+
+TAHOE_DESC=		Enable the tahoe special remote
+TAHOE_FLAG_ENABLE=	Tahoe
+TAHOE_FLAG_CABAL=	aeson
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

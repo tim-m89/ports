@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	exceptions
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Extensible optionally-pure exceptions
-
 
 USE_CABAL=	mtl>=2.0 transformers>=0.2
 

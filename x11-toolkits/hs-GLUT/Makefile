@@ -3,12 +3,12 @@
 
 PORTNAME=	GLUT
 PORTVERSION=	2.4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell binding for the OpenGL Utility Toolkit
+COMMENT=	Binding for the OpenGL Utility Toolkit
 
 LICENSE=	BSD
 

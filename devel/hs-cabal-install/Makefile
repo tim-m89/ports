@@ -2,7 +2,7 @@
 
 PORTNAME=	cabal-install
 PORTVERSION=	1.16.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -20,8 +20,8 @@ SUB_FILES=	cabal
 SUB_LIST=	AR=${AR} CC=${CC} CPP=${CPP} LD=${LD} RANLIB=${RANLIB}
 
 post-install::
-	@${MV} ${PREFIX}/bin/cabal ${PREFIX}/bin/cabal-install
-	${INSTALL_SCRIPT} ${WRKDIR}/cabal ${PREFIX}/bin
+	@${MV} ${STAGEDIR}${PREFIX}/bin/cabal ${STAGEDIR}${PREFIX}/bin/cabal-install
+	${INSTALL_SCRIPT} ${WRKDIR}/cabal ${STAGEDIR}${PREFIX}/bin
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

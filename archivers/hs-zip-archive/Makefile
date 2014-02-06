@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zip-archive
-PORTVERSION=	0.1.3.4
-PORTREVISION=	2
+PORTVERSION=	0.2
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,7 +9,7 @@ COMMENT=	Library for creating and modifying zip archives
 
 LICENSE=	BSD
 
-USE_CABAL=	digest>=0.0.0.1 mtl utf8-string>=0.3.1 zlib
+USE_CABAL=	binary>=0.5 digest>=0.0.0.1 mtl text>=0.11 zlib
 
 FLAGS_DEFINE=		EXECUTABLE
 

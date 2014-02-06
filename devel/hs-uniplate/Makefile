@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uniplate
-PORTVERSION=	1.6.11
+PORTVERSION=	1.6.12
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	BSD
 
 USE_CABAL=	hashable>=1.1.2.3 syb unordered-containers>=0.2.1
 
-INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/uniplate.htm ${DATADIR}
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/uniplate.htm ${STAGEDIR}${DATADIR}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

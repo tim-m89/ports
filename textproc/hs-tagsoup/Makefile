@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tagsoup
-PORTVERSION=	0.12.8
-PORTREVISION=	3
+PORTVERSION=	0.13
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,8 +12,12 @@ LICENSE=	BSD
 
 USE_CABAL=	text
 
-INSTALL_PORTDATA=	cd ${WRKSRC} && \
-			  ${INSTALL_DATA} ${WRKSRC}/tagsoup.htm ${DATADIR}
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/tagsoup.htm ${STAGEDIR}${DATADIR}
+
+FLAGS_DEFINE=	DOWNLOAD
+
+DOWNLOAD_DESC=		Build with Download module
+DOWNLOAD_FLAG_ENABLE=	download
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
