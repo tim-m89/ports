@@ -1,15 +1,15 @@
---- ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs.orig	2012-11-23 17:07:58.000000000 +0100
-+++ ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs	2012-11-23 19:17:52.000000000 +0100
+--- ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs.orig	2014-04-08 06:28:17.000000000 +1200
++++ ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs	2014-06-21 11:07:18.000000000 +1200
 @@ -46,7 +46,7 @@
    ) where
  
  import Distribution.Simple.Program.Types
 -         ( Program(..), simpleProgram )
 +         ( Program(..), simpleProgram, simpleProgramFromEnvironment )
+ import Distribution.Simple.Program.Find
+          ( findProgramOnSearchPath )
  import Distribution.Simple.Utils
-          ( findProgramLocation, findProgramVersion )
- 
-@@ -194,15 +194,15 @@
+@@ -196,15 +196,15 @@
    }
  
  gccProgram :: Program
@@ -28,7 +28,7 @@
  
  stripProgram :: Program
  stripProgram = simpleProgram "strip"
-@@ -255,13 +255,13 @@
+@@ -257,13 +257,13 @@
  greencardProgram = simpleProgram "greencard"
  
  ldProgram :: Program

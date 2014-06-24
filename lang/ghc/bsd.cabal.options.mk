@@ -23,7 +23,7 @@ GHC_VERSION?=	7.7.20140123
 GHC_PORT?=	lang/ghc-devel
 GHC_PACKAGE?=	ghc-devel
 .else
-GHC_VERSION?=	7.6.3
+GHC_VERSION?=	7.8.2
 GHC_PORT?=	lang/ghc
 GHC_PACKAGE?=	ghc
 .endif

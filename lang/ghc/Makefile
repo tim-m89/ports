@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/ghc/Makefile 327741 2013-09-20 19:53:09Z bapt $
 
 PORTNAME=	ghc
-PORTVERSION=	7.6.3
+PORTVERSION=	7.8.2
 PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
@@ -21,7 +21,7 @@ HSCOLOUR_VERSION=	1.20.3
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
-CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.* ghc-7.4.* ghc-7.7.*
+CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.* ghc-7.4.* ghc-7.7.* ghc-7.8.*
 
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
@@ -262,8 +262,8 @@ post-install-script:
 
 post-patch:
 # Hack don't to install the internal haddock.
-	@${REINPLACE_CMD} -e 's+\(DO_NOT_INSTALL =\)+\1 haddock+' \
-		${WRKSRC}/utils/Makefile
+#	@${REINPLACE_CMD} -e 's+\(DO_NOT_INSTALL =\)+\1 haddock+' \
+#		${WRKSRC}/utils/Makefile
 
 .if ${PORT_OPTIONS:MBOOT}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
