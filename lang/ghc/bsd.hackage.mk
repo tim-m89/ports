@@ -258,6 +258,7 @@ hxt_port=	textproc/hs-hxt
 hxt-charproperties_port=	textproc/hs-hxt-charproperties
 hxt-http_port=	net/hs-hxt-http
 hxt-regex-xmlschema_port=	textproc/hs-hxt-regex-xmlschema
+hxt-tagsoup_port=		textproc/hs-hxt-tagsoup
 hxt-unicode_port=		textproc/hs-hxt-unicode
 iconv_port=			converters/hs-iconv
 idris_port=			lang/hs-idris		# executable
