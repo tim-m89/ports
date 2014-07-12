@@ -3,13 +3,13 @@
 
 PORTNAME=	QuickCheck
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Automatic testing of Haskell programs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	random
 

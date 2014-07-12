@@ -2,13 +2,13 @@
 
 PORTNAME=	haskell-src
 PORTVERSION=	1.0.1.5
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Support for manipulating Haskell source code
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_HAPPY=	yes
 USE_CABAL=	syb

@@ -3,13 +3,13 @@
 
 PORTNAME=	xml
 PORTVERSION=	1.3.13
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Simple XML library for Haskell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	text
 

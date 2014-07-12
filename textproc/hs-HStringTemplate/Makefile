@@ -2,13 +2,13 @@
 
 PORTNAME=	HStringTemplate
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	StringTemplate implementation in Haskell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	blaze-builder mtl parsec syb text utf8-string void
 

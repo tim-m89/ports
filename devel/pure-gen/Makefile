@@ -3,14 +3,15 @@
 
 PORTNAME=	pure-gen
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	C interface generator for the Pure language
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-language-c>=0.4:${PORTSDIR}/devel/hs-language-c
@@ -20,7 +21,7 @@ NO_STAGE=	yes
 CC=		gcc
 
 USES=		pure:ffi
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 MAN1=		${PORTNAME}.1
 

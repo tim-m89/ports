@@ -2,13 +2,13 @@
 
 PORTNAME=	xhtml
 PORTVERSION=	3000.2.1
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	XHTML combinator library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

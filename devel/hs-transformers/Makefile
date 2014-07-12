@@ -3,13 +3,13 @@
 
 PORTNAME=	transformers
 PORTVERSION=	0.3.0.0
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Concrete functor monad transformers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -2,13 +2,13 @@
 
 PORTNAME=	MaybeT
 PORTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Support for computations with failures
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl
 

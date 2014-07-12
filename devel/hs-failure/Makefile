@@ -2,13 +2,13 @@
 
 PORTNAME=	failure
 PORTVERSION=	0.2.0.1
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Simple type class for success/failure computations
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	transformers>=0.2
 

@@ -3,13 +3,13 @@
 
 PORTNAME=	TypeCompose
 PORTVERSION=	0.9.9
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Type composition classes and instances
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

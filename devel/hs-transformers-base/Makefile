@@ -2,13 +2,13 @@
 
 PORTNAME=	transformers-base
 PORTVERSION=	0.4.1
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Lift computations from the bottom of a transformer stack
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	transformers>=0.2
 

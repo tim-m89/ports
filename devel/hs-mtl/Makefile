@@ -2,13 +2,13 @@
 
 PORTNAME=	mtl
 PORTVERSION=	2.1.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Monad classes, using functional dependencies
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	transformers>=0.3
 

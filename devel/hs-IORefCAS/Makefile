@@ -2,13 +2,13 @@
 
 PORTNAME=	IORefCAS
 PORTVERSION=	0.2.0.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Atomic compare and swap for IORefs and STRefs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	bits-atomic
 

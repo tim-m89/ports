@@ -3,13 +3,13 @@
 
 PORTNAME=	json
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Support for serialising Haskell to and from JSON
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl syb>=0.3.3 text
 

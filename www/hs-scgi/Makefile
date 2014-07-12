@@ -5,13 +5,13 @@
 
 PORTNAME=	scgi
 PORTVERSION=	0.3.3
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell library for writing SCGI programs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	cgi network>=2.2.3
 

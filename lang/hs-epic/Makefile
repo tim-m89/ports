@@ -2,13 +2,13 @@
 
 PORTNAME=	epic
 PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Compiler for a simple functional language
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl
 USE_HAPPY=	yes

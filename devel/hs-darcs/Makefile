@@ -3,11 +3,11 @@
 
 PORTNAME=	darcs
 PORTVERSION=	2.8.4
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A distributed, interactive, smart revision control system
+COMMENT=	Distributed, interactive, smart revision control system
 
 LICENSE=	GPLv2
 
@@ -18,7 +18,7 @@ USE_CABAL=	hashed-storage>=0.5.6 haskeline>=0.6.3 html \
 
 EXECUTABLE=	darcs
 
-MAN1=		darcs.1
+MAN1PAGES=	darcs.1
 
 FLAGS_DEFINE=		STATIC TERMINFO THREADED COLOR MMAP
 FLAGS_MULTI=		CURL HTTP
@@ -28,7 +28,7 @@ FLAGS_ENABLE=		library executable
 
 CURL_DESC=		Use libcurl for HTTP support
 CURL_FLAG_ENABLE=	curl
-CURL_FLAG_LIB=		curl:${PORTSDIR}/ftp/curl
+CURL_FLAG_LIB=		libcurl.so:${PORTSDIR}/ftp/curl
 
 HTTP_DESC=		Use the pure HTTP package
 HTTP_FLAG_ENABLE=	http

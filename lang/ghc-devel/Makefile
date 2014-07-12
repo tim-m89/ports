@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	7.7.20140123
+PORTVERSION=	7.8.0.20140228
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://haskell.inf.elte.hu/snapshots/:source \
+MASTER_SITES=	http://www.haskell.org/ghc/dist/7.8.1-rc2/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
 MASTER_SITE_SUBDIR=	pgj/:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-devel
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+MAKE_JOBS_NUMBER_LIMIT=		4
+
 GHC_VERSION=		${PORTVERSION}
 HSCOLOUR_VERSION=	1.20.3
 
@@ -23,16 +25,15 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
 CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.* ghc-7.4.* ghc-7.6.*
 
-USE_BZIP2=	yes
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5=		build
-USES=			gmake iconv perl5 ncurses
+USES=			gmake iconv perl5 ncurses tar:bzip2
 USE_BINUTILS=		yes
 USE_GCC=		yes
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -67,16 +68,13 @@ OPTIONS_DEFINE+=	BOOTH
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDYNAMIC}
-LIB_DEPENDS+=	ffi.6:${PORTSDIR}/devel/libffi
+# The version number is needed as lang/gcc installs a different version
+LIB_DEPENDS+=	libffi.so.6:${PORTSDIR}/devel/libffi
 .endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 
-.if ${OSVERSION} >= 1000043
 BOOT_GHC_VERSION=	7.6.3
-.else
-BOOT_GHC_VERSION=	7.4.1
-.endif
 
 EXTRA_PATCHES=		${PATCHDIR}/nopatch-.._ghc-${BOOT_GHC_VERSION}-boot_rts_package.conf.in
 
@@ -141,7 +139,7 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC}
+CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC} --with-ld=${LD}
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
 
 .else # MBOOT
@@ -294,7 +292,7 @@ pre-configure:
 		${TAR} xvf ${DISTDIR}/hscolour-${HSCOLOUR_VERSION}.tar.gz && \
 		cd hscolour-${HSCOLOUR_VERSION} && \
 		${SLAVE_CMD} ghc --make -o Setup Setup.hs -package Cabal && \
-		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} && \
+		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} --with-gcc=${CC} --with-ld=${LD} && \
 		${SLAVE_CMD} ./Setup build && \
 		${SLAVE_CMD} ./Setup install)
 .endif

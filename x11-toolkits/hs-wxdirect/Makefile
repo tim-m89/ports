@@ -2,13 +2,13 @@
 
 PORTNAME=	wxdirect
 PORTVERSION=	0.90.0.1
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Helper tool for building wxHaskell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	parsec>=2.1.0 strict
 

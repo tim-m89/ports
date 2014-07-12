@@ -2,13 +2,13 @@
 
 PORTNAME=	authenticate
 PORTVERSION=	1.3.2.6
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Authentication methods for Haskell web applications
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	aeson>=0.5 attoparsec blaze-builder case-insensitive>=0.2 \
 		conduit>=0.5 http-conduit>=1.5 http-types>=0.6 network \

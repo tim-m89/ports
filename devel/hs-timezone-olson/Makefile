@@ -2,13 +2,13 @@
 
 PORTNAME=	timezone-olson
 PORTVERSION=	0.1.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Pure Haskell parser and renderer for binary Olson timezone files
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	binary>=0.4.1 extensible-exceptions>=0.1.0 \
 		timezone-series>=0.1.0

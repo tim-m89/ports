@@ -2,13 +2,13 @@
 
 PORTNAME=	email-validate
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	mail haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Validating an email address string against RFC 5322
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	attoparsec>=0.10.0
 

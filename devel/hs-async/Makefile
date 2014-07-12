@@ -2,13 +2,13 @@
 
 PORTNAME=	async
 PORTVERSION=	2.0.1.4
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Run IO operations asynchronously and wait for their results
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	stm>=2.2
 

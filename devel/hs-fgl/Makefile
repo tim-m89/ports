@@ -3,13 +3,13 @@
 
 PORTNAME=	fgl
 PORTVERSION=	5.4.2.4
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Martin Erwig Functional Graph Library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl
 

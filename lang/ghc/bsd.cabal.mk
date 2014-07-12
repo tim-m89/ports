@@ -11,6 +11,7 @@
 
 .if !defined(METAPORT)
 MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
+DIST_SUBDIR?=	cabal
 .else
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -22,8 +23,6 @@ NO_MTREE=	yes
 .endif # !METAPORT
 
 MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 DESTDIR=${STAGEDIR}
-
-DIST_SUBDIR?=	cabal
 
 SETUP_CMD?=	./setup
 
@@ -86,8 +85,11 @@ CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
 			--with-ranlib=${RANLIB}
 
 .if ${PORT_OPTIONS:MLLVM}
-BUILD_DEPENDS+=		llvm>=3.0:${PORTSDIR}/devel/llvm34
-CONFIGURE_ARGS+=	--ghc-option=-fllvm
+CONFIGURE_ARGS+=	--ghc-option=-fllvm \
+			--ghc-option=-pgmlo --ghc-option=${LOCALBASE}/bin/opt32 \
+			--ghc-option=-pgmlc --ghc-option=${LOCALBASE}/bin/llc32
+
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt32:${PORTSDIR}/devel/llvm32
 .endif
 
 .if defined(USE_ALEX)
@@ -106,7 +108,7 @@ CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .endif
 
 .if defined(EXECUTABLE)
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 USES+=		iconv
 
 CONFIGURE_ARGS+=	--enable-executable-stripping
@@ -241,20 +243,20 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} haddock ${HADDOCK_OPTS}
 .endif # STANDALONE
 .if defined(XMLDOCS)
-	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
+	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif # XMLDOCS
 .endif # DOCS
 .endif # target(do-build)
 .endif # !METAPORT
 
-.if defined(MAN1)
-.for man in ${MAN1}
+.if defined(MAN1PAGES)
+.for man in ${MAN1PAGES}
 PLIST_FILES+=	man/man1/${man}.gz
 .endfor
 .endif
 
-.if defined(MAN5)
-.for man in ${MAN5}
+.if defined(MAN5PAGES)
+.for man in ${MAN5PAGES}
 PLIST_FILES+=	man/man5/${man}.gz
 .endfor
 .endif
@@ -279,7 +281,7 @@ do-install:
 .endif
 
 .if defined(MAN1SRC)
-.for man in ${MAN1}
+.for man in ${MAN1PAGES}
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1SRC}/${man} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 .endif # MAN1SRC
@@ -304,6 +306,13 @@ post-install-script:
 .for exe in ${EXECUTABLE}
 	@${ECHO_CMD} 'bin/${exe}' >>${TMPPLIST}
 .endfor
+.if defined(STANDALONE) && !${PORT_OPTIONS:MDYNAMIC}
+	@for dir in lib share share/doc share/examples; do \
+		if [ -d ${STAGEDIR}${PREFIX}/$${dir}/cabal/ghc-${GHC_VERSION} ]; then \
+		echo "@dirrmtry $${dir}/cabal/ghc-${GHC_VERSION}" >> ${TMPPLIST}; fi ; \
+		if [ -d ${STAGEDIR}${PREFIX}/$${dir}/cabal ]; then \
+		echo "@dirrmtry $${dir}/cabal" >> ${TMPPLIST}; fi ; done
+.endif
 .endif
 
 .endif # target(post-install-script)

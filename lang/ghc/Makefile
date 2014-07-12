@@ -15,6 +15,8 @@ COMMENT=	Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+MAKE_JOBS_NUMBER_LIMIT=		4
+
 GHC_VERSION=		${PORTVERSION}
 HSCOLOUR_VERSION=	1.20.3
 
@@ -23,16 +25,15 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
 CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.* ghc-7.4.* ghc-7.7.* ghc-7.8.*
 
-USE_BZIP2=	yes
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5=		build
-USES=			gmake iconv perl5 ncurses
+USES=			gmake iconv perl5 ncurses tar:bzip2
 USE_BINUTILS=		yes
 USE_GCC=		yes
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -44,13 +45,14 @@ MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 # You can view below.
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		PROFILE DYNAMIC DOCS
+OPTIONS_DEFINE=		PROFILE DYNAMIC LLVM DOCS
 OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS
 
 BOOT_DESC=		Use installed GHC for bootstrapping
 BOOTH_DESC=		Use installed HsColour for bootstrapping
 PROFILE_DESC=		Add support for performance profiling
 DYNAMIC_DESC=		Add support for dynamic linking
+LLVM_DESC=		Add support for generating code via LLVM
 DOCS_DESC=		Install HTML documentation
 
 LOCALBASE?=	/usr/local
@@ -67,16 +69,13 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDYNAMIC}
-LIB_DEPENDS+=	ffi.6:${PORTSDIR}/devel/libffi
+# The version number is needed as lang/gcc installs a different version
+LIB_DEPENDS+=	libffi.so.6:${PORTSDIR}/devel/libffi
 .endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 
-.if ${OSVERSION} >= 1000043
 BOOT_GHC_VERSION=	7.6.3
-.else
-BOOT_GHC_VERSION=	7.4.1
-.endif
 
 EXTRA_PATCHES=		${PATCHDIR}/nopatch-.._ghc-${BOOT_GHC_VERSION}-boot_rts_package.conf.in
 
@@ -132,6 +131,14 @@ CONFIGURE_ARGS+=	--with-system-libffi \
 			--with-ffi-libraries=${LOCALBASE}/lib
 .endif
 
+.if ${PORT_OPTIONS:MLLVM}
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt32:${PORTSDIR}/devel/llvm32
+RUN_DEPENDS+=		${LOCALBASE}/bin/opt32:${PORTSDIR}/devel/llvm32
+
+CONFIGURE_ARGS+=	--with-opt=${LOCALBASE}/bin/opt32 \
+			--with-llc=${LOCALBASE}/bin/llc32
+.endif
+
 .if empty(PORT_OPTIONS:MBOOT)
 
 BOOT_DIR=	${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
@@ -141,7 +148,7 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC}
+CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC} --with-ld=${LD}
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
 
 .else # MBOOT
@@ -255,7 +262,7 @@ post-install-script:
 		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 
 #post-build:
-#	@(cd ${WRKSRC} && ${GMAKE} binary-dist)
+#	@(cd ${WRKSRC} && ${MAKE_CMD} binary-dist)
 #
 #do-install:
 #	@${NONE}
@@ -283,7 +290,7 @@ pre-configure:
 	@${MKDIR} ${TMPDIR}
 .if empty(PORT_OPTIONS:MBOOT)
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT})
-	@(cd ${BOOT_DIR} && PACKAGES='' ${GMAKE} install)
+	@(cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install)
 .endif
 
 # Defining with documentation:
@@ -306,7 +313,7 @@ pre-configure:
 		${TAR} xvf ${DISTDIR}/hscolour-${HSCOLOUR_VERSION}.tar.gz && \
 		cd hscolour-${HSCOLOUR_VERSION} && \
 		${SLAVE_CMD} ghc --make -o Setup Setup.hs -package Cabal && \
-		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} && \
+		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} --with-gcc=${CC} --with-ld=${LD} && \
 		${SLAVE_CMD} ./Setup build && \
 		${SLAVE_CMD} ./Setup install)
 .endif

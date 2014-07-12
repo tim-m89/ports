@@ -2,7 +2,7 @@
 
 PORTNAME=	wxc
 PORTVERSION=	0.90.0.4
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,12 +10,14 @@ COMMENT=	wxHaskell C++ wrapper
 
 USE_CABAL=	wxdirect>=0.90
 
-USE_WX=		2.9
+BROKEN=		does not build with any of the supported wx
+
+USES=		dos2unix
+USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
 
-NOPORTDOCS=	yes
-USE_DOS2UNIX=	yes
+OPTIONS_EXCLUDE=DOCS
 
 post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-2.9-config"| ; \

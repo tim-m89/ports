@@ -3,13 +3,13 @@
 
 PORTNAME=	ghc-mtl
 PORTVERSION=	1.0.1.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Mtl-compatible version of the Ghc-Api monads and monad-transformers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	MonadCatchIO-mtl>=0.2.0.0 mtl
 
