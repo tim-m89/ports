@@ -2,8 +2,8 @@
 # $FreeBSD: head/lang/ghc/Makefile 327741 2013-09-20 19:53:09Z bapt $
 
 PORTNAME=	ghc
-PORTVERSION=	7.8.2
-PORTREVISION=	2
+PORTVERSION=	7.8.3
+PORTREVISION=	0
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
