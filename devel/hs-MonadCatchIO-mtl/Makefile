@@ -10,7 +10,7 @@ COMMENT=	Monad-transformer version of the Control.Exception module
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	extensible-exceptions MonadCatchIO-transformers>=0.3.1.0 \
+USE_CABAL=	extensible-exceptions MonadCatchIO-\
 		MonadCatchIO-transformers<=0.3.1.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

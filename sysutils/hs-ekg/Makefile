@@ -9,7 +9,7 @@ COMMENT=	Remote monitoring of processes
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	aeson network snap-core snap-server text transformers \
+USE_CABAL=	aeson network snap-core snap-server text \
 		unordered-containers
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

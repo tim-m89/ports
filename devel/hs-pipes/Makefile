@@ -11,7 +11,7 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	mmorph>=1.0.0 mtl>=2.0.1.0 transformers>=0.2.0.0 void
+USE_CABAL=	mmorph>=1.0.0 mtl>=2.0.1.0 void
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

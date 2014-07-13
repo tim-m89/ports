@@ -10,7 +10,7 @@ COMMENT=	Command-line interface for user input, written in Haskell
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	transformers>=0.2
+	
 USES+=		iconv
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
